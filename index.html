@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="content-language" content="es">
+    
+    <!-- SEO Español -->
+    <meta name="description" content="Alejandro Gutiérrez - Desarrollador Web Full-Stack con +10 años de experiencia. Especializado en React, JavaScript, Node.js, bases de datos y aplicaciones web empresariales de alto rendimiento.">
+    <meta name="keywords" content="desarrollador web, full-stack, React, JavaScript, Node.js, bases de datos, MySQL, PostgreSQL, MongoDB, freelance, México, Nuevo León">
+    <meta name="author" content="Alejandro Gutiérrez">
+    
+    <!-- SEO English -->
+    <meta name="description" lang="en" content="Alejandro Gutiérrez - Full-Stack Web Developer with +10 years experience. Specialized in React, JavaScript, Node.js, databases and high-performance enterprise web applications.">
+    <meta name="keywords" lang="en" content="web developer, full-stack, React, JavaScript, Node.js, databases, MySQL, PostgreSQL, MongoDB, freelance, Mexico, programmer">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alejandro Gutiérrez | Full-Stack Web Developer +10 Years">
+    <meta property="og:description" content="Desarrollador Web Full-Stack con más de 10 años transformando ideas en soluciones digitales exitosas">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <title>Alejandro Gutiérrez | Full-Stack Developer | +10 Años Experiencia</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #0a4d8c;
+            --secondary: #00d4ff;
+            --dark: #0f1419;
+            --gray: #4a5568;
+            --light: #e8f4f8;
+            --white: #ffffff;
+            --success: #00d4ff;
+            --whatsapp: #25D366;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            transition: opacity 0.3s ease;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        /* WHATSAPP BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--whatsapp);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 5px 30px rgba(37, 211, 102, 0.7); }
+        }
+        
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            position: relative;
+            color: white;
+            padding: 140px 2rem 100px;
+            text-align: center;
+            margin-top: 60px;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0,212,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0,212,255,0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 0.8s ease;
+            line-height: 1.2;
+            text-align: center;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            font-weight: 600;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .hero .experience-badge {
+            display: inline-block;
+            background: rgba(0,212,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            border: 2px solid var(--secondary);
+            animation: fadeInUp 0.8s ease 0.3s backwards;
+            text-align: center;
+        }
+        
+        .hero .hero-description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,212,255,0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37,211,102,0.4);
+        }
+        
+        /* SECTIONS */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        /* ABOUT */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .profile-image-container {
+            position: relative;
+        }
+        
+        .profile-image {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(10,77,140,0.3);
+            margin: 0 auto;
+            display: block;
+            border: 4px solid var(--secondary);
+        }
+        
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 1.2rem;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1.5rem;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        /* PORTFOLIO */
+        .portfolio {
+            background: var(--light);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            border: 2px solid transparent;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(10,77,140,0.2);
+            border-color: var(--secondary);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1.2rem 0;
+        }
+        
+        .tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid var(--secondary);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .project-link {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .link-demo {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .link-demo:hover {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .link-code {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .link-code:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary);
+            transition: transform 0.3s;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 0.7rem 0;
+            color: var(--gray);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .skill-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        /* CONTACT */
+        .contact {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+        }
+        
+        .contact .section-title {
+            color: white;
+        }
+        
+        .contact .section-title::after {
+            background: var(--secondary);
+        }
+        
+        .contact .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+            display: block;
+        }
+        
+        .contact-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero .subtitle { 
+                font-size: 1.3rem;
+                white-space: normal;
+            }
+            .about-content { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
+        }
+        
+        /* LANGUAGE HIDING */
+        [lang="en"] { display: none; }
+        html[lang="es"] [lang="es"] { display: block; }
+        html[lang="es"] [lang="en"] { display: none !important; }
+        
+        html[lang="en"] [lang="en"] { display: block; }
+        html[lang="en"] [lang="es"] { display: none !important; }
+        
+        /* Para elementos inline */
+        html[lang="es"] span[lang="es"],
+        html[lang="es"] a[lang="es"],
+        html[lang="es"] p[lang="es"],
+        html[lang="es"] h1[lang="es"],
+        html[lang="es"] h2[lang="es"],
+        html[lang="es"] h3[lang="es"],
+        html[lang="es"] div[lang="es"],
+        html[lang="es"] small[lang="es"] { 
+            display: inline !important; 
+        }
+        
+        html[lang="en"] span[lang="en"],
+        html[lang="en"] a[lang="en"],
+        html[lang="en"] p[lang="en"],
+        html[lang="en"] h1[lang="en"],
+        html[lang="en"] h2[lang="en"],
+        html[lang="en"] h3[lang="en"],
+        html[lang="en"] div[lang="en"],
+        html[lang="en"] small[lang="en"] { 
+            display: inline !important; 
+        }
+    </style>
+</head>
+<body>
+    <!-- WHATSAPP FLOAT BUTTON -->
+    <a href="https://wa.me/528110481221?text=Hola%20Alejandro,%20me%20interesa%20hablar%20sobre%20un%20proyecto" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Contáctame por WhatsApp">
+        <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.253 1.408 1.463-5.318-0.322-0.527c-1.362-2.22-2.078-4.757-2.078-7.335 0-7.636 6.213-13.85 13.85-13.85s13.85 6.213 13.85 13.85c0 7.636-6.213 13.85-13.85 13.85zM21.739 18.758c-0.366-0.183-2.168-1.069-2.504-1.192-0.337-0.123-0.581-0.183-0.826 0.183s-0.949 1.192-1.163 1.438c-0.214 0.245-0.428 0.275-0.794 0.092s-1.548-0.571-2.945-1.82c-1.089-0.973-1.824-2.175-2.038-2.541s-0.023-0.564 0.161-0.746c0.165-0.164 0.366-0.428 0.549-0.642s0.245-0.366 0.367-0.611c0.123-0.245 0.061-0.458-0.031-0.642s-0.826-1.991-1.132-2.727c-0.297-0.714-0.6-0.617-0.826-0.629-0.214-0.011-0.458-0.014-0.702-0.014s-0.642 0.092-0.979 0.458c-0.337 0.366-1.284 1.254-1.284 3.057s1.315 3.545 1.498 3.791c0.183 0.245 2.58 3.935 6.251 5.519 0.873 0.378 1.555 0.604 2.086 0.773 0.877 0.279 1.676 0.24 2.308 0.145 0.704-0.105 2.168-0.886 2.474-1.741s0.306-1.591 0.214-1.741c-0.091-0.151-0.336-0.242-0.702-0.425z"/></svg>
+    </a>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">AG</div>
+                <span lang="es">Alejandro Dev</span>
+                <span lang="en">Alejandro Dev</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" lang="es">Inicio</a><a href="#home" lang="en">Home</a></li>
+                <li><a href="#about" lang="es">Sobre Mí</a><a href="#about" lang="en">About</a></li>
+                <li><a href="#portfolio" lang="es">Portfolio</a><a href="#portfolio" lang="en">Portfolio</a></li>
+                <li><a href="#skills" lang="es">Skills</a><a href="#skills" lang="en">Skills</a></li>
+                <li><a href="#contact" lang="es">Contacto</a><a href="#contact" lang="en">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 lang="es">Hola, soy <span style="color: var(--secondary);">Alejandro Gutiérrez</span></h1>
+            <h1 lang="en">Hi, I'm <span style="color: var(--secondary);">Alejandro Gutiérrez</span></h1>
+            
+            <p class="subtitle" lang="es">Desarrollador Web Full-Stack</p>
+            <p class="subtitle" lang="en">Full-Stack Web Developer</p>
+            
+            <div class="experience-badge">
+                <span lang="es">✨ +10 Años de Experiencia</span>
+                <span lang="en">✨ +10 Years Experience</span>
+            </div>
+            
+            <p class="hero-description" lang="es">Transformo ideas en soluciones digitales de alto rendimiento. Especializado en crear aplicaciones web modernas, escalables y seguras que impulsan el crecimiento de tu negocio.</p>
+            <p class="hero-description" lang="en">I transform ideas into high-performance digital solutions. Specialized in creating modern, scalable and secure web applications that drive your business growth.</p>
+            
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn btn-primary">
+                    <span lang="es">🚀 Ver Mis Proyectos</span>
+                    <span lang="en">🚀 View My Projects</span>
+                </a>
+                <a href="https://wa.me/528110481221?text=Hola%20Alejandro,%20me%20interesa%20hablar%20sobre%20un%20proyecto" target="_blank" class="btn btn-whatsapp">
+                    <span lang="es">💬 Hablemos por WhatsApp</span>
+                    <span lang="en">💬 Let's Talk on WhatsApp</span>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span lang="es">📧 Otras Formas de Contacto</span>
+                    <span lang="en">📧 Other Contact Methods</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title" lang="es">Sobre Mí</h2>
+        <h2 class="section-title" lang="en">About Me</h2>
+        
+        <p class="section-subtitle" lang="es">Más de una década creando experiencias digitales excepcionales</p>
+        <p class="section-subtitle" lang="en">Over a decade creating exceptional digital experiences</p>
+        
+        <div class="about-content">
+            <div class="profile-image-container">
+                <img src="foto-perfil.jpg" alt="Alejandro Gutiérrez - Full-Stack Developer" class="profile-image">
+            </div>
+            
+            <div class="about-text">
+                <h3 lang="es">Desarrollador Web Full-Stack Senior</h3>
+                <h3 lang="en">Senior Full-Stack Web Developer</h3>
+                
+                <div lang="es">
+                    <p>Con <span class="highlight">más de 10 años de experiencia</span> en el desarrollo de software, he tenido el privilegio de trabajar en proyectos de diversas escalas y complejidades, desde startups emergentes hasta soluciones empresariales robustas.</p>
+                    
+                    <p>Mi especialización abarca <span class="highlight">frontend moderno con React y JavaScript</span>, combinado con un sólido conocimiento en <span class="highlight">backend, APIs RESTful y gestión integral de bases de datos</span> (MySQL, PostgreSQL, MongoDB). Esta experiencia integral me permite crear soluciones completas end-to-end que no solo se ven bien, sino que funcionan de manera óptima.</p>
+                    
+                    <p>Lo que me distingue es mi enfoque en crear <span class="highlight">código limpio, escalable y mantenible</span>, aplicando las mejores prácticas de la industria y metodologías ágiles. Cada proyecto es una oportunidad para superar expectativas y entregar resultados que generan valor real para el negocio.</p>
+                    
+                    <p>Mi experiencia incluye arquitectura de aplicaciones, optimización de rendimiento, integración de sistemas, diseño de bases de datos relacionales y NoSQL, y deployment en entornos de producción. He trabajado tanto en proyectos individuales como liderando equipos de desarrollo.</p>
+                    
+                    <p>📍 <strong>Ubicación:</strong> México</p>
+                    <p>💼 <strong>Disponibilidad:</strong> Proyectos freelance y colaboraciones de largo plazo</p>
+                    <p>🌐 <strong>Modalidad:</strong> Remoto</p>
+                </div>
+                
+                <div lang="en">
+                    <p>With <span class="highlight">over 10 years of software development experience</span>, I've had the privilege of working on projects of various scales and complexities, from emerging startups to robust enterprise solutions.</p>
+                    
+                    <p>My specialization spans <span class="highlight">modern frontend with React and JavaScript</span>, combined with solid knowledge in <span class="highlight">backend, RESTful APIs, and comprehensive database management</span> (MySQL, PostgreSQL, MongoDB). This comprehensive experience allows me to create complete end-to-end solutions that not only look great but perform optimally.</p>
+                    
+                    <p>What sets me apart is my focus on creating <span class="highlight">clean, scalable, and maintainable code</span>, applying industry best practices and agile methodologies. Each project is an opportunity to exceed expectations and deliver results that generate real business value.</p>
+                    
+                    <p>My experience includes application architecture, performance optimization, system integration, relational and NoSQL database design, and deployment in production environments. I've worked both on individual projects and leading development teams.</p>
+                    
+                    <p>📍 <strong>Location:</strong> Mexico</p>
+                    <p>💼 <strong>Availability:</strong> Freelance projects and long-term collaborations</p>
+                    <p>🌐 <strong>Mode:</strong> Remote</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label" lang="es">Años de Experiencia</div>
+                        <div class="stat-label" lang="en">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label" lang="es">Proyectos Completados</div>
+                        <div class="stat-label" lang="en">Completed Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title" lang="es">Portfolio de Proyectos</h2>
+        <h2 class="section-title" lang="en">Project Portfolio</h2>
+        
+        <p class="section-subtitle" lang="es">Soluciones digitales que generan resultados reales</p>
+        <p class="section-subtitle" lang="en">Digital solutions that generate real results</p>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">📦</div>
+                <div class="project-content">
+                    <h3 lang="es">Sistema de Inventario Pro</h3>
+                    <h3 lang="en">Pro Inventory System</h3>
+                    
+                    <p lang="es">Sistema empresarial completo con dashboard interactivo, analytics en tiempo real, gestión CRUD completa, sistema de reportes y auditoría integrada.</p>
+                    <p lang="en">Complete enterprise system with interactive dashboard, real-time analytics, full CRUD management, reporting system and integrated auditing.</p>
+                    
+                    <div class="project-tags">
+                        <span class="tag" translate="no">React 18</span>
+                        <span class="tag" translate="no">Tailwind CSS</span>
+                        <span class="tag" translate="no">JavaScript</span>
+                        <span class="tag">Mobile-Friendly</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://inventario-demo.netlify.app/" target="_blank" class="project-link link-demo">
+                            <span lang="es">🚀 Ver Demo</span>
+                            <span lang="en">🚀 View Demo</span>
+                        </a>
+                        <a href="https://github.com/projectone2020/sistema-inventario-demo" target="_blank" class="project-link link-code">
+                            <span lang="es">💻 Código</span>
+                            <span lang="en">💻 Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🛒</div>
+                <div class="project-content">
+                    <h3 lang="es">Sistema POS - Próximamente</h3>
+                    <h3 lang="en">POS System - Coming Soon</h3>
+                    
+                    <p lang="es">Sistema de punto de venta con gestión de productos, carrito inteligente, cálculo automático y registro completo de transacciones.</p>
+                    <p lang="en">Point of sale system with product management, smart cart, automatic calculation and complete transaction logging.</p>
+                    
+                    <div class="project-tags">
+                        <span class="tag" translate="no">React</span>
+                        <span class="tag" translate="no">Node.js</span>
+                        <span class="tag" translate="no">Database</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://wa.me/528110481221?text=Hola%20Alejandro,%20me%20interesa%20el%20Sistema%20POS" target="_blank" class="project-link link-demo">
+                            <span lang="es">💬 Desarrollemos Tu Versión</span>
+                            <span lang="en">💬 Let's Build Your Version</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">📊</div>
+                <div class="project-content">
+                    <h3 lang="es">CRM Empresarial - Próximamente</h3>
+                    <h3 lang="en">Enterprise CRM - Coming Soon</h3>
+                    
+                    <p lang="es">Sistema CRM avanzado para gestión de clientes, seguimiento de interacciones, pipeline de ventas y analytics detallados.</p>
+                    <p lang="en">Advanced CRM system for customer management, interaction tracking, sales pipeline and detailed analytics.</p>
+                    
+                    <div class="project-tags">
+                        <span class="tag" translate="no">React</span>
+                        <span class="tag" translate="no">Dashboard</span>
+                        <span class="tag" translate="no">Analytics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://wa.me/528110481221?text=Hola%20Alejandro,%20me%20interesa%20el%20CRM" target="_blank" class="project-link link-demo">
+                            <span lang="es">💬 Cotizar Proyecto</span>
+                            <span lang="en">💬 Get Quote</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title" lang="es">Skills & Tecnologías</h2>
+        <h2 class="section-title" lang="en">Skills & Technologies</h2>
+        
+        <p class="section-subtitle" lang="es">Stack tecnológico integral para soluciones completas</p>
+        <p class="section-subtitle" lang="en">Comprehensive tech stack for complete solutions</p>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>💻 Frontend</h3>
+                <ul class="skill-list">
+                    <li>React 18 / Next.js</li>
+                    <li>JavaScript ES6+ / TypeScript</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>Tailwind CSS / Styled Components</li>
+                    <li>Responsive Design & Mobile-First</li>
+                    <li>Web Performance Optimization</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>⚙️ Backend & Databases</h3>
+                <ul class="skill-list">
+                    <li>Node.js / Express</li>
+                    <li>REST APIs & GraphQL</li>
+                    <li>MySQL / PostgreSQL</li>
+                    <li>MongoDB / NoSQL</li>
+                    <li>Database Design & Optimization</li>
+                    <li>Authentication & Security</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3 lang="es">🚀 DevOps & Tools</h3>
+                <h3 lang="en">🚀 DevOps & Tools</h3>
+                <ul class="skill-list">
+                    <li>Git & GitHub / GitLab</li>
+                    <li>Docker & Containerization</li>
+                    <li>CI/CD Pipelines</li>
+                    <li>AWS / Firebase / Supabase</li>
+                    <li>Netlify / Vercel Deployment</li>
+                    <li>Testing & Quality Assurance</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3 lang="es">💼 Soft Skills & Metodologías</h3>
+                <h3 lang="en">💼 Soft Skills & Methodologies</h3>
+                <ul class="skill-list">
+                    <li lang="es">Desarrollo Ágil / Scrum</li>
+                    <li lang="en">Agile Development / Scrum</li>
+                    <li>Clean Code & Best Practices</li>
+                    <li lang="es">Arquitectura de Software</li>
+                    <li lang="en">Software Architecture</li>
+                    <li lang="es">Comunicación Efectiva</li>
+                    <li lang="en">Effective Communication</li>
+                    <li lang="es">Gestión de Proyectos</li>
+                    <li lang="en">Project Management</li>
+                    <li lang="es">Resolución de Problemas</li>
+                    <li lang="en">Problem Solving</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2 class="section-title" lang="es" style="text-align: center;">¿Listo para Desarrollar Tu Proyecto?</h2>
+        <h2 class="section-title" lang="en" style="text-align: center;">Ready to Develop Your Project?</h2>
+        
+        <div class="contact-content">
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;" lang="es">
+                Estoy disponible para proyectos freelance y colaboraciones de largo plazo. 
+                Si tienes una idea o proyecto en mente, ¡conversemos y hagámoslo realidad!
+            </p>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;" lang="en">
+                I'm available for freelance projects and long-term collaborations. 
+                If you have an idea or project in mind, let's talk and make it happen!
+            </p>
+            
+            <div class="contact-links">
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <strong>WhatsApp</strong>
+                    <a href="https://wa.me/528110481221?text=Hola%20Alejandro,%20me%20interesa%20hablar%20sobre%20un%20proyecto" target="_blank">
+                        +52 811 048 1221
+                    </a>
+                    <small lang="es">(Respuesta rápida)</small>
+                    <small lang="en">(Quick response)</small>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <strong>Email</strong>
+                    <a href="mailto:alejandro.gutierrezb31@gmail.com">
+                        alejandro.gutierrezb31@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <strong>LinkedIn</strong>
+                    <a href="https://www.linkedin.com/in/alejandro-gutierrez-9a0318107/" target="_blank">
+                        <span lang="es">Ver Perfil Profesional</span>
+                        <span lang="en">View Professional Profile</span>
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <strong>GitHub</strong>
+                    <a href="https://github.com/projectone2020" target="_blank">
+                        @projectone2020
+                    </a>
+                    <small lang="es">(Ver código)</small>
+                    <small lang="en">(View code)</small>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <a href="https://wa.me/528110481221?text=Hola%20Alejandro,%20me%20interesa%20hablar%20sobre%20un%20proyecto" target="_blank" class="btn btn-whatsapp" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+                    <span lang="es">💬 Iniciar Conversación por WhatsApp</span>
+                    <span lang="en">💬 Start WhatsApp Conversation</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p lang="es">&copy; 2024 Alejandro Gutiérrez. Todos los derechos reservados.</p>
+        <p lang="en">&copy; 2024 Alejandro Gutiérrez. All rights reserved.</p>
+        <p style="margin-top: 0.8rem; font-size: 0.95rem;">
+            <span lang="es">Hecho con ❤️ y React | México 🇲🇽</span>
+            <span lang="en">Made with ❤️ and React | Mexico 🇲🇽</span>
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.project-card, .skill-category, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
