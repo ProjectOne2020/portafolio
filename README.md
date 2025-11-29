@@ -1,6 +1,6 @@
 # 🌐 Portfolio Profesional - Alejandro Gutiérrez
 
-Portfolio bilingüe (Español/Inglés) con 4 demos empresariales en producción.
+Portfolio con 4 demos empresariales en producción.
 
 ## 🚀 Ver Portfolio
 
