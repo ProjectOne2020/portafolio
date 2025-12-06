@@ -216,7 +216,7 @@
 
 ## 🚀 Actualizaciones Recientes
 
-### **Versión 6.0** (Diciembre 2024) 🔥
+### **Versión 6.0** (Diciembre 2025) 🔥
 - ✅ **Nuevo:** Dashly - React Admin Dashboard Template
 - ✅ **PRODUCTO COMERCIAL** disponible en ThemeForest
 - ✅ 15+ componentes UI profesionales
@@ -225,7 +225,7 @@
 - ✅ TypeScript-ready y completamente customizable
 - ✅ Documentación completa + demos interactivos
 
-### **Versión 5.0** (Noviembre 2024)
+### **Versión 5.0** (Noviembre 2025)
 - ✅ **Nuevo:** AgendaPro - Sistema de Citas Online
 - ✅ Auto-agendamiento para clientes
 - ✅ 3 roles completamente diferenciados
@@ -234,12 +234,12 @@
 - ✅ Control financiero completo
 - ✅ README profesional (1,007 líneas)
 
-### **Versión 4.0** (Noviembre 2024)
+### **Versión 4.0** (Noviembre 2025)
 - ShopHub - Tienda Online Pro agregada
 - Sistema de cupones implementado
 - Gestión de pedidos completa
 
-### **Versión 3.0** (Noviembre 2024)
+### **Versión 3.0** (Noviembre 2025)
 - CRM Empresarial agregado
 - Menú móvil corregido
 - Pipeline visual de ventas
@@ -312,36 +312,6 @@ Demostrar capacidades técnicas mediante **proyectos reales y funcionales** que 
 - ✅ Validaciones y seguridad básica
 - ✅ Exportación de datos
 - ✅ Reportes y analytics
-
----
-
-## 📱 Instalación Local
-
-### **Opción 1: GitHub Pages (Recomendado)**
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/projectone2020/portafolio.git
-
-# Abrir index.html en el navegador
-cd portafolio
-open index.html
-```
-
----
-
-### **Opción 2: Servidor Local**
-
-```bash
-# Con Python
-python -m http.server 8000
-
-# Con Node.js
-npx serve
-
-# Abrir en navegador
-http://localhost:8000
-```
 
 ---
 
@@ -476,21 +446,18 @@ git push origin main
 - Diseño responsive
 - Formulario de contacto
 - SEO optimizado
-- **Desde $6,000 - $10,000 MXN**
 
 #### **🟡 Profesional - Sistema Web**
 - Panel administrativo
 - CRUD completo
 - Base de datos
 - Autenticación
-- **$25,000 - $50,000 MXN**
 
 #### **🔴 Enterprise - Solución Completa**
 - Arquitectura escalable
 - API REST
 - Múltiples roles
 - Integraciones
-- **$80,000 - $150,000 MXN**
 
 ---
 
@@ -499,7 +466,7 @@ git push origin main
 Este portfolio y sus demos están bajo la Licencia MIT.
 
 ```
-MIT License - Copyright (c) 2024 Alejandro Gutiérrez
+MIT License - Copyright (c) 2025 Alejandro Gutiérrez
 ```
 
 ---
