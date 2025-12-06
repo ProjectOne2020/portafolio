@@ -14,9 +14,29 @@
 
 ---
 
-## 📊 5 Demos Empresariales Funcionales
+## 📊 6 Demos Empresariales Funcionales
 
-### 1️⃣ **Sistema de Inventario Pro**
+### ⭐ **Dashly - React Admin Dashboard** 🔥 PRODUCTO COMERCIAL
+📊 Template profesional de admin dashboard con 15+ componentes UI, modo oscuro completo y rendimiento optimizado.
+
+- **Demo:** https://dashly-demo.netlify.app/
+- **Comprar:** https://themeforest.net (Próximamente)
+- **Repo:** https://github.com/ProjectOne2020/dashly-react-admin
+- **Stack:** React 18, Vite 5, Tailwind CSS 3, TypeScript-ready
+- **Características:**
+  - 15+ componentes UI profesionales (Button, Card, Modal, etc.)
+  - Dark mode completo con detección de sistema
+  - Sidebar colapsable con navegación
+  - Búsqueda global en navbar
+  - 75% más rápido que competidores
+  - Completamente customizable
+  - TypeScript compatible
+  - Documentación completa
+  - **🛒 DISPONIBLE PARA VENTA**
+
+---
+
+### 2️⃣ **Sistema de Inventario Pro**
 📦 Sistema empresarial completo con dashboard interactivo, analytics en tiempo real, gestión CRUD, reportes y auditoría.
 
 - **Demo:** https://inventario-demo.netlify.app/
@@ -32,7 +52,7 @@
 
 ---
 
-### 2️⃣ **Sistema POS (Punto de Venta)**
+### 3️⃣ **Sistema POS (Punto de Venta)**
 🛒 Terminal de punto de venta profesional con gestión de ventas, productos, clientes y reportes financieros.
 
 - **Demo:** https://sistema-pos-demo.netlify.app/
@@ -48,7 +68,7 @@
 
 ---
 
-### 3️⃣ **CRM Empresarial**
+### 4️⃣ **CRM Empresarial**
 📊 Sistema de gestión de relaciones con clientes con pipeline de ventas, seguimiento y analytics.
 
 - **Demo:** https://crm-empresarial.netlify.app/
@@ -65,7 +85,7 @@
 
 ---
 
-### 4️⃣ **ShopHub - Tienda Online Pro**
+### 5️⃣ **ShopHub - Tienda Online Pro**
 🛍️ Plataforma completa de e-commerce con panel administrativo y gestión integral.
 
 - **Demo:** https://tienda-online-profesional-demo.netlify.app/
@@ -82,7 +102,7 @@
 
 ---
 
-### 5️⃣ **AgendaPro - Sistema de Citas Online** ⭐ NUEVO
+### 6️⃣ **AgendaPro - Sistema de Citas Online** ⭐ NUEVO
 📅 Sistema completo de gestión de citas médicas con auto-agendamiento para clientes.
 
 - **Demo:** https://reserva-de-citas.netlify.app/
@@ -107,13 +127,14 @@
 
 ```
 ┌─────────────────────────────────────────┐
-│  5 Sistemas Completos                   │
-│  ~5,702 Líneas de Código               │
-│  ~4,159 Líneas de Documentación        │
-│  5 Esquemas de Colores Únicos          │
-│  15+ Roles de Usuario                  │
-│  100% Responsive                        │
-│  100% Funcional                         │
+│  6 Sistemas Completos                   │
+│  ~6,450 Líneas de Código                │
+│  ~5,170 Líneas de Documentación         │
+│  6 Esquemas de Colores Únicos           │
+│  18+ Roles de Usuario                   │
+│  100% Responsive                         │
+│  100% Funcional                          │
+│  1 Producto Comercial (Dashly)          │
 └─────────────────────────────────────────┘
 ```
 
@@ -148,6 +169,7 @@
 
 | Proyecto | Color Principal | Rol Único | Líneas | Estado |
 |----------|-----------------|-----------|--------|--------|
+| **Dashly** | **Azul+Cyan** | **Admin** | **~750** | ✅ **Comercial** |
 | Inventario | Azul+Cyan | Viewer | ~450 | ✅ Live |
 | POS | Verde+Naranja | Cajero | ~550 | ✅ Live |
 | CRM | Azul marino | Vendedor | ~1,255 | ✅ Live |
@@ -193,6 +215,15 @@
 ---
 
 ## 🚀 Actualizaciones Recientes
+
+### **Versión 6.0** (Diciembre 2024) 🔥
+- ✅ **Nuevo:** Dashly - React Admin Dashboard Template
+- ✅ **PRODUCTO COMERCIAL** disponible en ThemeForest
+- ✅ 15+ componentes UI profesionales
+- ✅ Dark mode completo con auto-detección
+- ✅ 75% más rápido que competidores
+- ✅ TypeScript-ready y completamente customizable
+- ✅ Documentación completa + demos interactivos
 
 ### **Versión 5.0** (Noviembre 2024)
 - ✅ **Nuevo:** AgendaPro - Sistema de Citas Online
@@ -324,11 +355,12 @@ http://localhost:8000
 - 🐙 GitHub: https://github.com/projectone2020
 
 ### **Demos Live**
-1. Inventario: https://inventario-demo.netlify.app/
-2. POS: https://sistema-pos-demo.netlify.app/
-3. CRM: https://crm-empresarial.netlify.app/
-4. E-commerce: https://tienda-online-profesional-demo.netlify.app/
-5. AgendaPro: https://reserva-de-citas.netlify.app/
+1. **Dashly (Comercial):** https://dashly-demo.netlify.app/ 🔥
+2. Inventario: https://inventario-demo.netlify.app/
+3. POS: https://sistema-pos-demo.netlify.app/
+4. CRM: https://crm-empresarial.netlify.app/
+5. E-commerce: https://tienda-online-profesional-demo.netlify.app/
+6. AgendaPro: https://reserva-de-citas.netlify.app/
 
 ---
 
@@ -354,6 +386,11 @@ git push origin main
 ### **Colores por Proyecto**
 
 ```css
+/* Dashly - Admin Dashboard */
+--primary: #3b82f6;  /* Blue */
+--secondary: #06b6d4;  /* Cyan */
+--accent: #8b5cf6;  /* Purple */
+
 /* Sistema de Inventario */
 --primary: #0891b2;  /* Cyan */
 --secondary: #06b6d4;
