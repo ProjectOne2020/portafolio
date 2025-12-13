@@ -6,7 +6,7 @@ Bienvenido al código fuente de mi portafolio personal. Este proyecto muestra mi
 
 ## 🚀 Proyectos Destacados
 
-### [Google Maps Lead Scraper Pro](https://projectone2020.github.io/maps-scraper-web/) (NUEVO)
+### [Maps Lead Scraper Pro](https://projectone2020.github.io/maps-scraper-web/) (NUEVO)
 
 Software de escritorio de nivel empresarial para la generación automatizada de leads.
 
