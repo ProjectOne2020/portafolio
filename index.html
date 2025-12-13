@@ -1,852 +1,740 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alejandro Gutiérrez - Desarrollador Web Full-Stack especializado en React, JavaScript y soluciones empresariales">
+    <meta name="description"
+        content="Alejandro Gutiérrez - Full-Stack Developer. Creando soluciones web modernas y herramientas de automatización.">
     <title>Alejandro Gutiérrez | Full-Stack Developer</title>
-    
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
-            /* Dark Blue Palette */
-            --bg-primary: #0a0e27;
-            --bg-secondary: #151935;
-            --bg-tertiary: #1e2442;
-            
-            /* Blue Accents */
-            --blue-primary: #3b82f6;
-            --blue-secondary: #60a5fa;
-            --blue-dark: #1e40af;
-            --cyan: #06b6d4;
-            
-            /* Grays */
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            
-            /* Glass Effect */
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-shadow: rgba(0, 0, 0, 0.3);
+            /* Base Colors */
+            --bg-page: #f8fafc;
+            --bg-card: #ffffff;
+
+            /* Text Colors */
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-tertiary: #94a3b8;
+
+            /* Accents */
+            --accent-primary: #4f46e5;
+            /* Indigo 600 */
+            --accent-secondary: #0ea5e9;
+            /* Sky 500 */
+            --accent-tertiary: #8b5cf6;
+            /* Violet 500 */
+
+            /* Gradients */
+            --gradient-main: linear-gradient(135deg, #4f46e5, #8b5cf6);
+            --gradient-hover: linear-gradient(135deg, #4338ca, #7c3aed);
+            --gradient-text: linear-gradient(135deg, #1e293b, #4f46e5);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-primary);
-            color: var(--gray-100);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
-        /* Animated Background Gradient */
+
+        /* Subtle Background Mesh */
         body::before {
             content: '';
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(30, 64, 175, 0.1) 0%, transparent 50%);
+            width: 100vw;
+            height: 100vh;
+            background:
+                radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.05) 0px, transparent 50%);
             z-index: -1;
-            animation: gradient-shift 15s ease infinite;
+            pointer-events: none;
         }
-        
-        @keyframes gradient-shift {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        
-        /* Container */
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
-        
-        /* Header / Navigation */
+
+        /* Header */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
             padding: 1.5rem 0;
-            background: rgba(10, 14, 39, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            background: rgba(248, 250, 252, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 50;
         }
-        
+
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--blue-primary), var(--cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            text-decoration: none;
         }
-        
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-        
+
         .nav-links a {
-            color: var(--gray-200);
             text-decoration: none;
+            color: var(--text-secondary);
             font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
+            transition: color 0.2s;
+            font-size: 0.95rem;
         }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--blue-primary), var(--cyan));
-            transition: width 0.3s;
-        }
-        
+
         .nav-links a:hover {
-            color: var(--blue-secondary);
+            color: var(--accent-primary);
         }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
+
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            padding: 6rem 0;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #10b981;
+            box-shadow: var(--shadow-md);
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 8rem 2rem 4rem;
-            position: relative;
+            gap: 0.4rem;
         }
-        
-        .hero-content {
-            max-width: 800px;
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
         }
-        
-        /* Profile Photo */
-        .profile-photo {
-            width: 280px;
-            max-width: 90vw;
-            height: auto;
-            margin: 0 auto 2rem auto;
-            display: block;
-            border-radius: 12px;
-            border: 2px solid rgba(59, 130, 246, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
         }
-        
-        .profile-photo:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 70px rgba(59, 130, 246, 0.3);
-            border-color: var(--blue-primary);
-        }
-        
-        .hero-tag {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            color: var(--blue-secondary);
-        }
-        
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            line-height: 1.1;
             font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff, var(--blue-secondary));
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .highlight {
+            background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
         }
-        
-        .hero .subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            color: var(--gray-300);
-            margin-bottom: 3rem;
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .cta-buttons {
+
+        .btn-group {
             display: flex;
             gap: 1rem;
             justify-content: center;
-            flex-wrap: wrap;
         }
-        
+
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
             font-weight: 600;
-            transition: all 0.3s;
+            text-decoration: none;
+            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .btn-primary {
-            background: linear-gradient(135deg, var(--blue-primary), var(--cyan));
+            background: var(--gradient-main);
             color: white;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 8px 16px rgba(79, 70, 229, 0.4);
         }
-        
+
         .btn-secondary {
-            background: var(--glass-bg);
-            color: var(--gray-100);
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(10px);
+            background: white;
+            color: var(--text-primary);
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--shadow-sm);
         }
-        
+
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--blue-primary);
+            background: #f8fafc;
+            border-color: #cbd5e1;
         }
-        
-        /* Section Styles */
-        section {
-            padding: 6rem 0;
-        }
-        
+
+        /* Projects Section */
         .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
         }
-        
-        .section-tag {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            font-size: 0.85rem;
-            color: var(--blue-secondary);
-            margin-bottom: 1rem;
-        }
-        
+
         .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff, var(--blue-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -0.5px;
         }
-        
-        .section-description {
-            color: var(--gray-300);
+
+        .section-subtitle {
+            color: var(--text-secondary);
             font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
         }
-        
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s;
-            box-shadow: 0 8px 32px var(--glass-shadow);
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--blue-primary);
-            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.2);
-        }
-        
-        /* Projects Grid */
-        .projects-grid {
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 2rem;
+            margin-bottom: 6rem;
         }
-        
-        .project-card {
-            position: relative;
+
+        /* Card Design */
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid #f1f5f9;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
+            height: 100%;
         }
-        
-        .project-badge {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, var(--blue-primary), var(--cyan));
-            color: white;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            z-index: 10;
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
         }
-        
-        .project-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .project-description {
-            color: var(--gray-300);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .tag {
-            padding: 0.4rem 1rem;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--blue-secondary);
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .project-link {
-            flex: 1;
-            min-width: 120px;
-            padding: 0.8rem 1.5rem;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid var(--blue-primary);
-            border-radius: 10px;
-            text-decoration: none;
-            color: var(--blue-secondary);
-            text-align: center;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .project-link:hover {
-            background: var(--blue-primary);
-            color: white;
-            transform: scale(1.05);
-        }
-        
-        .link-buy {
-            background: linear-gradient(135deg, #1dbf73, #17a05e);
-            border-color: #1dbf73;
-            color: white;
-        }
-        
-        .link-buy:hover {
-            background: linear-gradient(135deg, #17a05e, #1dbf73);
-        }
-        
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .skill-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--blue-secondary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .skill-list {
-            list-style: none;
-        }
-        
-        .skill-list li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid var(--glass-border);
-            color: var(--gray-300);
-            transition: all 0.3s;
-        }
-        
-        .skill-list li:hover {
-            color: var(--blue-secondary);
-            padding-left: 0.5rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--glass-border);
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .contact-item {
-            text-align: center;
+
+        .card-body {
             padding: 2rem;
+            flex: 1;
         }
-        
-        .contact-icon {
-            font-size: 2.5rem;
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 1rem;
         }
-        
-        .contact-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-        
-        .contact-item a {
-            color: var(--blue-secondary);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .contact-item a:hover {
-            color: var(--cyan);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--glass-border);
-            padding: 3rem 0;
-            text-align: center;
-            color: var(--gray-300);
-        }
-        
-        /* WhatsApp Float Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            border-radius: 50%;
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.3s;
+            font-size: 1.5rem;
+            background: #f1f5f9;
+        }
+
+        .card.featured {
+            border: 2px solid var(--accent-primary);
+            position: relative;
+        }
+
+        .card.featured .icon-box {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--accent-primary);
+        }
+
+        .badge-new {
+            background: var(--accent-primary);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            background: #f1f5f9;
+            color: var(--text-secondary);
+        }
+
+        .card-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            gap: 1rem;
+            background: #f8fafc;
+        }
+
+        .card-link {
+            font-size: 0.9rem;
+            font-weight: 600;
             text-decoration: none;
-            font-size: 2rem;
+            color: var(--text-secondary);
+            transition: color 0.2s;
         }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+
+        .card-link:hover {
+            color: var(--accent-primary);
         }
-        
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
+
+        .card-link.primary {
+            color: var(--accent-primary);
         }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+
+        /* Tech Stack */
+        .tech-section {
+            background: white;
+            padding: 6rem 0;
+            border-top: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
         }
-        
-        /* Responsive */
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .tech-item h4 {
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Contact CTA */
+        .cta-section {
+            padding: 8rem 0;
+            text-align: center;
+        }
+
+        .cta-card {
+            background: var(--text-primary);
+            color: white;
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+        }
+
+        .cta-card h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
-            .profile-photo {
-                width: 220px;
-            }
-            
             .nav-links {
-                gap: 1rem;
+                display: none;
             }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .project-links {
-                flex-direction: column;
-            }
-            
-            .project-link {
-                width: 100%;
+
+            h1 {
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Header -->
+
     <header>
-        <nav>
-            <div class="logo">AG</div>
-            <ul class="nav-links">
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Alejandro<span>.Dev</span></a>
+                <ul class="nav-links">
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <img src="foto-perfil.jpg" alt="Alejandro Gutiérrez" class="profile-photo">
-            <div class="hero-tag">✨ Disponible para Freelance</div>
-            <h1>Alejandro Gutiérrez</h1>
-            <p class="subtitle">Full-Stack Developer especializado en React, JavaScript y soluciones empresariales de alto rendimiento</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">Ver Proyectos →</a>
-                <a href="#contact" class="btn btn-secondary">Contacto</a>
+        <div class="container">
+            <div class="profile-container">
+                <img src="foto-perfil.jpg" alt="Alejandro Gutierrez" class="profile-img">
+                <div class="status-badge">
+                    <div class="status-dot"></div> Disponible
+                </div>
+            </div>
+            <h1>Resolviendo problemas complejos con <span class="highlight">código limpio</span>.</h1>
+            <p>Full-Stack Developer especializado en construir aplicaciones web escalables, herramientas de
+                automatización y soluciones SaaS.</p>
+            <div class="btn-group">
+                <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                <a href="https://wa.me/528110481221" target="_blank" class="btn btn-secondary">Contactar</a>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-tag">💼 Portfolio</div>
+    <div class="container">
+        <div class="section-header" id="proyectos">
+            <div>
                 <h2 class="section-title">Proyectos Destacados</h2>
-                <p class="section-description">
-                    Soluciones web modernas, rápidas y escalables construidas con las últimas tecnologías
-                </p>
+                <p class="section-subtitle">Una selección de mis trabajos más recientes.</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- 1. Google Maps Scraper (FEATURED) -->
+            <div class="card featured">
+                <div class="card-body">
+                    <div class="card-header">
+                        <div class="icon-box">🚀</div>
+                        <span class="badge-new">Nuevo</span>
+                    </div>
+                    <h3>Google Maps Lead Scraper Pro</h3>
+                    <p>Software de escritorio empresarial para generación masiva de leads. Incluye protección
+                        anti-detección, scroll infinito y sistema de licencias por hardware.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Selenium</span>
+                        <span class="tag">Tkinter</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://projectone2020.github.io/maps-scraper-web/" target="_blank"
+                        class="card-link primary">Ver Producto &rarr;</a>
+                    <span style="font-size:0.8rem; color:#94a3b8; margin-left:auto;">Software Privado</span>
+                </div>
             </div>
 
-            <div class="projects-grid">
-                <!-- Dashly Project -->
-                <div class="glass-card project-card fade-in">
-                    <div class="project-badge">⭐ Comercial</div>
-                    <div class="project-icon">📊</div>
-                    <h3 class="project-title">Dashly - React Admin Dashboard</h3>
-                    <p class="project-description">
-                        Template profesional de admin dashboard con 15+ componentes UI, modo oscuro completo, y rendimiento optimizado (75% más rápido). Construido con React 18, Vite 5 y Tailwind CSS 3.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React 18</span>
-                        <span class="tag">Vite 5</span>
-                        <span class="tag">Tailwind CSS</span>
-                        <span class="tag">Dark Mode</span>
+            <!-- 2. Dashly -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header">
+                        <div class="icon-box">📊</div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://dashly-demo.netlify.app/" target="_blank" class="project-link">🚀 Demo</a>
-                        <a href="https://github.com/ProjectOne2020/dashly-react-admin" target="_blank" class="project-link">💻 GitHub</a>
-                        <a href="https://themeforest.net" target="_blank" class="project-link link-buy">🛒 Comprar</a>
+                    <h3>Dashly - Admin Dashboard</h3>
+                    <p>Template profesional de panel administrativo. Rendimiento optimizado (95+ Lighthouse), modo
+                        oscuro y componentes reutilizables.</p>
+                    <div class="tags">
+                        <span class="tag">React 18</span>
+                        <span class="tag">Vite</span>
+                        <span class="tag">Tailwind</span>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <a href="https://dashly-demo.netlify.app/" target="_blank" class="card-link primary">Live Demo</a>
+                    <a href="https://github.com/ProjectOne2020/dashly-react-admin" target="_blank"
+                        class="card-link">GitHub</a>
+                </div>
+            </div>
 
-                <!-- AgendaPro Project -->
-                <div class="glass-card project-card fade-in">
-                    <div class="project-icon">📅</div>
-                    <h3 class="project-title">AgendaPro - Sistema de Citas</h3>
-                    <p class="project-description">
-                        Sistema completo de gestión de citas médicas con auto-agendamiento, calendario interactivo, control de pagos y reportes financieros automáticos.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React 18</span>
-                        <span class="tag">Tailwind CSS</span>
-                        <span class="tag">3 Roles</span>
-                        <span class="tag">Responsive</span>
+            <!-- 3. AgendaPro -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header">
+                        <div class="icon-box">📅</div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://reserva-de-citas.netlify.app/" target="_blank" class="project-link">🚀 Demo</a>
-                        <a href="https://github.com/projectone2020/agendapro-sistema-citas" target="_blank" class="project-link">💻 GitHub</a>
+                    <h3>AgendaPro Medical</h3>
+                    <p>Sistema SaaS completo para clínicas. Agendamiento en tiempo real, procesador de pagos integrado y
+                        reportes financieros.</p>
+                    <div class="tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Stripe</span>
+                        <span class="tag">PostgreSQL</span>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <a href="https://reserva-de-citas.netlify.app/" target="_blank" class="card-link primary">Live
+                        Demo</a>
+                    <a href="https://github.com/projectone2020/agendapro-sistema-citas" target="_blank"
+                        class="card-link">GitHub</a>
+                </div>
+            </div>
 
-                <!-- Sistema Inventario -->
-                <div class="glass-card project-card fade-in">
-                    <div class="project-icon">📦</div>
-                    <h3 class="project-title">Sistema de Inventario Pro</h3>
-                    <p class="project-description">
-                        Sistema empresarial completo con dashboard interactivo, analytics en tiempo real, gestión CRUD completa y sistema de reportes integrado.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React 18</span>
-                        <span class="tag">Tailwind CSS</span>
-                        <span class="tag">Dashboard</span>
-                        <span class="tag">Analytics</span>
+            <!-- 4. Inventario Pro -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header">
+                        <div class="icon-box">📦</div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://inventario-demo.netlify.app/" target="_blank" class="project-link">🚀 Demo</a>
-                        <a href="https://github.com/projectone2020/sistema-inventario-demo" target="_blank" class="project-link">💻 GitHub</a>
+                    <h3>Sistema de Inventario Pro</h3>
+                    <p>Control total de stock para empresas. Dashboard interactivo, alertas de stock bajo y analíticas
+                        de rotación en tiempo real.</p>
+                    <div class="tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Charts.js</span>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <a href="https://inventario-demo.netlify.app/" target="_blank" class="card-link primary">Live
+                        Demo</a>
+                    <a href="https://github.com/projectone2020/sistema-inventario-demo" target="_blank"
+                        class="card-link">GitHub</a>
+                </div>
+            </div>
 
-                <!-- Sistema POS -->
-                <div class="glass-card project-card fade-in">
-                    <div class="project-icon">🛒</div>
-                    <h3 class="project-title">Sistema POS Pro</h3>
-                    <p class="project-description">
-                        Punto de venta profesional con control por roles, scanner de códigos de barras, gestión de productos y múltiples métodos de pago.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React 18</span>
-                        <span class="tag">Barcode</span>
-                        <span class="tag">Multi-Role</span>
+            <!-- 5. POS System -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header">
+                        <div class="icon-box">🛒</div>
+                    </div>
+                    <h3>Sistema POS Pro</h3>
+                    <p>Punto de venta moderno. Soporte para escáner de código de barras, gestión de roles de
+                        cajero/admin y tickets térmicos.</p>
+                    <div class="tags">
+                        <span class="tag">React</span>
                         <span class="tag">PWA</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://sistema-pos-demo.netlify.app/" target="_blank" class="project-link">🚀 Demo</a>
-                        <a href="https://github.com/projectone2020/sistema-pos-demo" target="_blank" class="project-link">💻 GitHub</a>
+                        <span class="tag">Offline-First</span>
                     </div>
                 </div>
-
-                <!-- CRM Empresarial -->
-                <div class="glass-card project-card fade-in">
-                    <div class="project-icon">💼</div>
-                    <h3 class="project-title">CRM Empresarial</h3>
-                    <p class="project-description">
-                        Sistema CRM completo para gestión de clientes, seguimiento de ventas, pipeline visual y reportes avanzados de rendimiento.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React 18</span>
-                        <span class="tag">Dashboard</span>
-                        <span class="tag">Analytics</span>
-                        <span class="tag">Charts</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://crm-empresarial.netlify.app/" target="_blank" class="project-link">🚀 Demo</a>
-                        <a href="https://github.com/projectone2020/sistema-crm-demo" target="_blank" class="project-link">💻 GitHub</a>
-                    </div>
-                </div>
-
-                <!-- E-commerce -->
-                <div class="glass-card project-card fade-in">
-                    <div class="project-icon">🛍️</div>
-                    <h3 class="project-title">ShopHub - E-commerce</h3>
-                    <p class="project-description">
-                        Plataforma de e-commerce completa con panel admin, gestión de productos, carrito dinámico y múltiples métodos de pago.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React 18</span>
-                        <span class="tag">E-commerce</span>
-                        <span class="tag">Payments</span>
-                        <span class="tag">Admin</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://tienda-online-profesional-demo.netlify.app/" target="_blank" class="project-link">🚀 Demo</a>
-                        <a href="https://github.com/projectone2020/tienda-online-demo" target="_blank" class="project-link">💻 GitHub</a>
-                    </div>
+                <div class="card-footer">
+                    <a href="https://sistema-pos-demo.netlify.app/" target="_blank" class="card-link primary">Live
+                        Demo</a>
+                    <a href="https://github.com/projectone2020/sistema-pos-demo" target="_blank"
+                        class="card-link">GitHub</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
+            <!-- 6. CRM -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header">
+                        <div class="icon-box">💼</div>
+                    </div>
+                    <h3>Enterprise CRM</h3>
+                    <p>Gestión de relaciones con clientes. Pipeline de ventas visual (Kanban), seguimiento de prospectos
+                        y métricas de conversión.</p>
+                    <div class="tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Redux</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://crm-empresarial.netlify.app/" target="_blank" class="card-link primary">Live
+                        Demo</a>
+                    <a href="https://github.com/projectone2020/sistema-crm-demo" target="_blank"
+                        class="card-link">GitHub</a>
+                </div>
+            </div>
+
+            <!-- 7. E-commerce -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header">
+                        <div class="icon-box">🛍️</div>
+                    </div>
+                    <h3>ShopHub E-commerce</h3>
+                    <p>Plataforma de ventas online completa. Panel de administración robusto, carrito dinámico y
+                        pasarela de pagos segura.</p>
+                    <div class="tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://tienda-online-profesional-demo.netlify.app/" target="_blank"
+                        class="card-link primary">Live Demo</a>
+                    <a href="https://github.com/projectone2020/tienda-online-demo" target="_blank"
+                        class="card-link">GitHub</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <section class="tech-section" id="expertise">
         <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-tag">🛠️ Tecnologías</div>
-                <h2 class="section-title">Skills & Expertise</h2>
-                <p class="section-description">
-                    Stack tecnológico integral para desarrollo full-stack de soluciones empresariales
-                </p>
-            </div>
-
-            <div class="skills-grid">
-                <!-- Frontend -->
-                <div class="glass-card skill-card fade-in">
-                    <h3>💻 Frontend</h3>
-                    <ul class="skill-list">
-                        <li>React 18 / Next.js</li>
-                        <li>JavaScript ES6+ / TypeScript</li>
-                        <li>Tailwind CSS / Styled Components</li>
-                        <li>Responsive Design & Mobile-First</li>
-                        <li>Performance Optimization</li>
-                    </ul>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Stack Tecnológico</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>Frontend Moderno</h4>
+                    <p>React 18, Next.js, Tailwind CSS, TypeScript</p>
                 </div>
-
-                <!-- Backend -->
-                <div class="glass-card skill-card fade-in">
-                    <h3>⚙️ Backend & Databases</h3>
-                    <ul class="skill-list">
-                        <li>Node.js / Express</li>
-                        <li>REST APIs & GraphQL</li>
-                        <li>MySQL / PostgreSQL</li>
-                        <li>MongoDB / NoSQL</li>
-                        <li>Authentication & Security</li>
-                    </ul>
+                <div class="tech-item">
+                    <h4>Backend & Cloud</h4>
+                    <p>Node.js, PostgreSQL, AWS, Vercel</p>
                 </div>
-
-                <!-- DevOps -->
-                <div class="glass-card skill-card fade-in">
-                    <h3>🚀 DevOps & Tools</h3>
-                    <ul class="skill-list">
-                        <li>Git & GitHub / GitLab</li>
-                        <li>Docker & CI/CD</li>
-                        <li>AWS / Firebase / Supabase</li>
-                        <li>Netlify / Vercel</li>
-                        <li>Testing & QA</li>
-                    </ul>
+                <div class="tech-item">
+                    <h4>Automatización</h4>
+                    <p>Python, Selenium, Pandas, Scripting</p>
                 </div>
-
-                <!-- Soft Skills -->
-                <div class="glass-card skill-card fade-in">
-                    <h3>💼 Soft Skills</h3>
-                    <ul class="skill-list">
-                        <li>Desarrollo Ágil / Scrum</li>
-                        <li>Clean Code & Best Practices</li>
-                        <li>Arquitectura de Software</li>
-                        <li>Gestión de Proyectos</li>
-                        <li>Comunicación Efectiva</li>
-                    </ul>
+                <div class="tech-item">
+                    <h4>Herramientas</h4>
+                    <p>Git, Docker, CI/CD, Agile</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Call to Action -->
+    <section class="cta-section" id="contacto">
         <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-tag">📞 Conectemos</div>
-                <h2 class="section-title">¿Listo para Desarrollar Tu Proyecto?</h2>
-                <p class="section-description">
-                    Disponible para proyectos freelance y colaboraciones de largo plazo
-                </p>
-            </div>
-
-            <div class="contact-grid">
-                <div class="glass-card contact-item fade-in">
-                    <div class="contact-icon">💬</div>
-                    <h3>WhatsApp</h3>
-                    <a href="https://wa.me/528110481221" target="_blank">+52 811 048 1221</a>
-                    <p style="font-size: 0.9rem; color: var(--gray-300); margin-top: 0.5rem;">Respuesta rápida</p>
-                </div>
-
-                <div class="glass-card contact-item fade-in">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <a href="/cdn-cgi/l/email-protection#cfaea3aaa5aea1abbda0e1a8babba6aabdbdaab5adfcfe8fa8a2aea6a3e1aca0a2"><span class="__cf_email__" data-cfemail="8beae7eee1eae5eff9e4a5ecfeffe2eef9f9eef1e9b8bacbece6eae2e7a5e8e4e6">[email&#160;protected]</span></a>
-                </div>
-
-                <div class="glass-card contact-item fade-in">
-                    <div class="contact-icon">💼</div>
-                    <h3>LinkedIn</h3>
-                    <a href="https://www.linkedin.com/in/alejandro-gutierrez-9a0318107/" target="_blank">Ver Perfil</a>
-                </div>
-
-                <div class="glass-card contact-item fade-in">
-                    <div class="contact-icon">💻</div>
-                    <h3>GitHub</h3>
-                    <a href="https://github.com/projectone2020" target="_blank">@projectone2020</a>
+            <div class="cta-card">
+                <h2>¿Listo para empezar un proyecto?</h2>
+                <p>Estoy disponible para freelance y consultoría técnica. Llevemos tu idea al siguiente nivel.</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/528110481221" class="btn"
+                        style="background: white; color: var(--text-primary);">
+                        Hablar por WhatsApp
+                    </a>
+                    <a href="mailto:aleja@example.com" class="btn"
+                        style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                        Enviar Email
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Alejandro Gutiérrez. Todos los derechos reservados.</p>
-            <p style="margin-top: 0.5rem; opacity: 0.7;">Hecho con ❤️ y React | México 🇲🇽</p>
+            <p>&copy; 2025 Alejandro Gutiérrez. Hecho con <span style="color: var(--accent-primary);">♥</span> y
+                estándares modernos.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/528110481221?text=Hola%20Alejandro,%20me%20interesa%20hablar%20sobre%20un%20proyecto" target="_blank" class="whatsapp-float">
-        💬
-    </a>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    </script>
 </body>
+
 </html>
